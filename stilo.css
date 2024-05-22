@@ -1,0 +1,11 @@
+body{
+    margin:0;
+}
+header{
+    background-color:blue ;
+    text-align: center;
+}
+h1{
+    margin: 0;
+    padding: 4em 0;
+}
