@@ -1,16 +1,76 @@
-body{
-    margin:0;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
-header{
-    background-color:blue ;
+
+.hero {
+    background-image: url('imagenes/imagen.png'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* La sección ocupará toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     text-align: center;
 }
-h1{
-    margin: 0;
-    padding: 4em 0;
-}
-main{
-    max-width: 850px;
-    background-color: aqua;
 
+.content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad del texto */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Limita el ancho máximo del contenido */
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5em;
+    margin: 0;
+}
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+    .content {
+        max-width: 50%; /* Mayor ancho del contenido en pantallas grandes */
+        padding: 40px; /* Mayor padding en pantallas grandes */
+    }
+    h1 {
+        font-size: 4em;
+    }
+    p {
+        font-size: 2em;
+    }
+}
+/* Ajustes para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        max-width: 70%; /* Ajuste del ancho para pantallas medianas */
+        padding: 30px; /* Ajuste del padding para pantallas medianas */
+    }
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+    .content {
+        max-width: 90%; /* Ancho máximo del contenido en pantallas pequeñas */
+        padding: 20px; /* Ajuste del padding para pantallas pequeñas */
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
 }
