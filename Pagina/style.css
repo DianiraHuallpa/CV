@@ -5,15 +5,109 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-
 .hero {
-    background-image: url('imagen.png'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('imagen.png'); /*imagen */
     background-size: cover;
     background-position: center;
-    height: 100vh; /* La sección ocupará toda la altura de la ventana */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    padding: 20px; /* Añade un poco de padding para móviles */
+    min-height: 100vh;
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    box-sizing: border-box;
+
+}
+
+header h1 {
+    font-family: 'Cinzel'; /* fuente*/
+    font-size: 2em;
+    margin: 0;
+}
+
+.project {
+    font-family: 'Cinzel';
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.project h2 {
+
+    font-size: 1em;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.project h3 {
+    font-size: 0.8em;
+    color: #007BFF;
+    margin: 0 0 10px;
+}
+
+.project p {
+    font-size: 0.6em;
+    color: #666;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+    .content {
+        max-width: 50%;
+        padding: 40px;
+    }
+    header h1 {
+        font-size: 4em;
+    }
+    .project {
+        width: 30%;
+    }
+}
+
+/* Ajustes para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        max-width: 70%;
+        padding: 30px;
+    }
+    header h1 {
+        font-size: 3em;
+    }
+    .project {
+        width: 45%;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+    .content {
+        max-width: 90%;
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    .project {
+        width: 100%;
+    }
 }
