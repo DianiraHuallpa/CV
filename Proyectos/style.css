@@ -14,7 +14,7 @@ body, html {
     align-items: center;
     color: white;
     text-align: center;
-    padding: 20px; /* Añade un poco de padding para móviles */
+    padding: 20px; /* padding para móviles */
     min-height: 100vh;
 }
 
@@ -28,46 +28,89 @@ body, html {
 }
 
 header h1 {
-    font-family: 'Cinzel'; /* fuente*/
+    font-family: 'Cinzel';
     font-size: 2em;
     margin: 0;
 }
 
 .project {
-    font-family: 'Cinzel';
-    background: white;
+    font-family: Cinzel;
+    position: relative;
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
     width: 100%;
+    color: white; /* Color del texto para que sea visible sobre la imagen de fondo */
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Superposición semitransparente */
+    z-index: 0; /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
+.project h2,
+.project h3,
+.project p {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre la superposición */
 }
 
 .project h2 {
-
-    font-size: 1em;
+    font-size: 1.2em;
     margin: 0 0 10px;
-    color: #333;
+    color: #f8fcf8;
 }
-
 .project h3 {
-    font-size: 0.8em;
+    font-size: 1em;
     color: #007BFF;
     margin: 0 0 10px;
 }
-
 .project p {
-    font-size: 0.6em;
-    color: #666;
+    font-size: 0.9em;
+    color: #ffffff;
     margin: 0;
 }
+.project1 {
+    background-image: url('../imagenes/Justicia.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
+.project2 {
+    background-image: url('../imagenes/trivial.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.project3 {
+    background-image: url('../imagenes/telefonos.webp');
+    background-size: cover;
+    background-position: center;
+
+}
 main {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.small-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8em;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 /* Ajustes para pantallas grandes */
@@ -97,8 +140,9 @@ main {
         width: 45%;
     }
 }
-
+<!-- -->
 /* Ajustes para pantallas pequeñas */
+/**/
 @media (max-width: 767px) {
     .content {
         max-width: 90%;

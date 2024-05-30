@@ -7,7 +7,7 @@ body, html {
 
 
 .hero {
-    background-image: url('imagenes/imagen.png'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('imagenes/imagen.png');
     background-size: cover;
     background-position: center;
     height: 100vh; /* La sección ocupará toda la altura de la ventana */
@@ -47,7 +47,7 @@ body, html {
     /*font-family: 'Playfair Display', cursive;*/
 }
 .content h1,h2,h3,p{
-    font-family: 'Cinzel';
+    font-family: Cinzel;
 }
 .small-link {
     font-family: 'Arial', sans-serif;
