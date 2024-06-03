@@ -7,15 +7,16 @@ body, html {
 
 
 .hero {
-    background-image: url('imagen.png'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../imagenes/imagen.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* La sección ocupará toda la altura de la ventana */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    padding: 20px; /* padding para móviles */
+    min-height: 100vh;
 }
 
 .content {
@@ -24,4 +25,147 @@ body, html {
     border-radius: 10px;
     max-width: 80%; /* Limita el ancho máximo del contenido */
     box-sizing: border-box;
+}
+
+.content p{
+    font-size: 1.2em;
+    margin: 0;
+    font-family: 'Cormorant Garamond', cursive;
+}
+.content h1{
+    font-size: 2em;
+    margin: 0;
+    /*font-family: 'Playfair Display', cursive;*/
+}
+.content h2{
+    font-size: 1.5em;
+    margin: 0;
+    /*font-family: 'Playfair Display', cursive;*/
+}
+.content h3{
+    font-size: 1em;
+    margin: 0;
+    /*font-family: 'Playfair Display', cursive;*/
+}
+.content h1,h2,h3,p{
+    font-family: Cinzel;
+}
+.small-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8em;
+    color: #ffffff;
+    text-decoration: none;
+    /*margin-top: 10px;*/
+    /*display: inline-block;*/
+    position: relative;
+    transition: color 0.3s;
+}
+.small-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white; /* Color del subrayado */
+    transform: scaleX(0); /* Comienza con el subrayado escondido */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out; /* Transición suave para el subrayado */
+}
+.small-link:hover {
+    color: #38ecdd; /* Color al pasar el cursor por encima */
+}
+
+.small-link:hover::after {
+    transform: scaleX(1); /* Muestra el subrayado al pasar el cursor por encima */
+    transform-origin: bottom left;
+}
+
+.small-link.hover-right::after {
+    transform-origin: bottom right; /* Subrayado desde la derecha */
+}
+
+.small-link.hover::after {
+    transform: scaleX(1); /* Muestra el subrayado */
+}
+
+/* Estilos para resaltar las secciones */
+section {
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transición suave para el cambio de fondo, color y transformación */
+    padding: 20px; /* Añadir un poco de espacio alrededor de las secciones */
+}
+
+section:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente más claro */
+    color: #38ecdd; /* Color del texto cuando se pasa el ratón por encima */
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño para dar un efecto de enfoque */
+}
+section a{
+    text-decoration: none;
+    color: #007BFF;
+    font-family: Cinzel, cursive ;
+}
+
+section h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-links a {
+    color: white; /* Color de los íconos */
+    font-size: 2em; /* Tamaño de los íconos */
+    transition: color 0.4s, transform 0.6s; /* Añade la transición para color y transformación */
+}
+.social-links a:hover {
+    color: #c804f5; /* Color al pasar el cursor por encima */
+    transform: rotate(360deg); /* Rotación de 360 grados */
+}
+
+
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+    .content {
+        max-width: 50%; /* Mayor ancho del contenido en pantallas grandes */
+        padding: 40px; /* Mayor padding en pantallas grandes */
+    }
+    h1 {
+        font-size: 4em;
+    }
+    p {
+        font-size: 2em;
+    }
+}
+/* Ajustes para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        max-width: 70%; /* Ajuste del ancho para pantallas medianas */
+        padding: 30px; /* Ajuste del padding para pantallas medianas */
+    }
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+    .content {
+        max-width: 90%; /* Ancho máximo del contenido en pantallas pequeñas */
+        padding: 20px; /* Ajuste del padding para pantallas pequeñas */
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
 }

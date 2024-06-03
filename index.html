@@ -10,14 +10,51 @@
 <body>
 <div class="hero">
     <div class="content">
-        <h1>Bienvenido a mi portfolio </h1>
+        <h1 id="welcomeText"></h1>
         <h3>Mi nombre es Dianira Huallpa</h3>
         <h3>Web Developer junior</h3>
-        <p>Frontend Developer | Backend Developer</p>
+        <p class="flame-text">Frontend Developer | Backend Developer</p>
         <a href="Proyectos/index.html" class="small-link"> &#128194;Mira mis proyectos</a> <!-- Enlace pequeño -->
         <a href="Informacion/index.html" class="small-link"> &#128218;Más información</a> <!-- Enlace pequeño -->
 
     </div>
 </div>
+<script>
+    document.querySelectorAll('.small-link').forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            const linkRect = link.getBoundingClientRect();
+            const mouseX = e.clientX - linkRect.left;
+            if (mouseX < linkRect.width / 2) {
+                link.classList.add('hover-left');
+                link.classList.remove('hover-right');
+            } else {
+                link.classList.add('hover-right');
+                link.classList.remove('hover-left');
+            }
+            link.classList.add('hover');
+        });
+
+        link.addEventListener('mouseleave', () => {
+            link.classList.remove('hover', 'hover-left', 'hover-right');
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var text = "Bienvenido a mi portfolio";
+        var element = document.getElementById('welcomeText');
+        var index = 0;
+
+        function animateText() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(animateText, 100); // Adjust the speed of animation by changing the milliseconds
+            }
+        }
+
+        animateText();
+    });
+</script>
 </body>
 </html>

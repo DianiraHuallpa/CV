@@ -3,20 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Porfolio</title>
+    <title>Mas informacion</title>
     <link rel="stylesheet" href="stylo.css?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Great+Vibes&family=Playfair+Display&family=Abril+Fatface&family=Dancing+Script&family=Cinzel&family=Satisfy&family=Amatic+SC&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 </head>
 <body>
 <div class="hero">
     <div class="content">
-        <h1>Welcome.</h1>
-
-        <p>Frontend Developer | Backend Developer</p>
-        <a href="Pagina/index.html" class="small-link"> &#128194;Mira mis proyectos</a> <!-- Enlace pequeño -->
-        <a href="Pagina2/index.html" class="small-link"> &#128218;Más información</a> <!-- Enlace pequeño -->
-
+        <main>
+            <section>
+                <br>
+                <h1>Sobre mí...</h1>
+                <p>¡Hola! Soy una desarrolladora apasionada con experiencia en frontend y backend. Me encanta crear soluciones elegantes y eficientes para problemas complejos. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades.</p>
+                <br>
+            </section>
+            <section>
+                <h1>Habilidades</h1>
+                <br>
+                <p>
+                    HTML, CSS, JavaScript
+                    React, Angular, Vue
+                    Node.js, Express, MongoDB
+                    Git, Docker, CI/CD, Java, SQL
+                </p>
+                <br>
+            </section>
+            <section>
+                <h1>Contacto</h1>
+                <br>
+                <p>Puedes contactarme a través de mi correo electrónico: <a href="mailto:dian.hua@gmail.com">dian.hua@gmail.com</a></p>
+                <p>Sígueme en mis redes sociales:</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:dian.hua@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </section>
+        </main>
+        <a href="../index.html" class="small-link"> &#x21a9;&#xfe0f;Volver a la página principal</a>
+        <a href="../proyectos/index.html" class="small-link"> &#128194;Mira mis proyectos</a>
     </div>
 </div>
+<script>
+    document.querySelectorAll('.small-link').forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            const linkRect = link.getBoundingClientRect();
+            const mouseX = e.clientX - linkRect.left;
+            if (mouseX < linkRect.width / 2) {
+                link.classList.add('hover-left');
+                link.classList.remove('hover-right');
+            } else {
+                link.classList.add('hover-right');
+                link.classList.remove('hover-left');
+            }
+            link.classList.add('hover');
+        });
+
+        link.addEventListener('mouseleave', () => {
+            link.classList.remove('hover', 'hover-left', 'hover-right');
+        });
+    });
+</script>
 </body>
 </html>

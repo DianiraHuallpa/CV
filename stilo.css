@@ -26,6 +26,7 @@ body, html {
     box-sizing: border-box;
 }
 
+
 .content p{
     font-size: 1.2em;
     margin: 0;
@@ -49,13 +50,52 @@ body, html {
 .content h1,h2,h3,p{
     font-family: Cinzel;
 }
+@keyframes flames {
+    0% { color: #f6d9d2; }
+    50% { color: #f8f1c3; }
+    100% { color: #fad4cc; }
+}
+
+.flame-text {
+    animation: flames 2s infinite;
+}
 .small-link {
     font-family: 'Arial', sans-serif;
     font-size: 0.8em;
     color: #ffffff;
     text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
+    /*margin-top: 10px;*/
+    /*display: inline-block;*/
+    position: relative;
+    transition: color 0.3s;
+}
+.small-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white; /* Color del subrayado */
+    transform: scaleX(0); /* Comienza con el subrayado escondido */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out; /* Transición suave para el subrayado */
+}
+.small-link:hover {
+    color: #38ecdd; /* Color al pasar el cursor por encima */
+}
+
+.small-link:hover::after {
+    transform: scaleX(1); /* Muestra el subrayado al pasar el cursor por encima */
+    transform-origin: bottom left;
+}
+
+.small-link.hover-right::after {
+    transform-origin: bottom right; /* Subrayado desde la derecha */
+}
+
+.small-link.hover::after {
+    transform: scaleX(1); /* Muestra el subrayado */
 }
 
 /* Ajustes para pantallas grandes */
