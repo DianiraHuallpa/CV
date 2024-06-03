@@ -26,7 +26,6 @@ body, html {
     box-sizing: border-box;
 }
 
-
 .content p{
     font-size: 1.2em;
     margin: 0;
@@ -51,9 +50,9 @@ body, html {
     font-family: Cinzel;
 }
 @keyframes flames {
-    0% { color: #f6d9d2; }
+    0% { color: #fdd5cb; }
     50% { color: #f8f1c3; }
-    100% { color: #fad4cc; }
+    100% { color: #f8f6f6; }
 }
 
 .flame-text {
